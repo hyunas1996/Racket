@@ -1,0 +1,27 @@
+#lang racket
+
+; racket list examples
+
+; car function - approach list's head
+; cdr function - approach list's tail
+
+; sum list elements
+(define (sum xs)
+  (if (null? xs)
+      0
+      (+ (car xs) (sum (cdr xs)))))
+
+; concatenate two lists
+; cons function - racket build in function
+(define (my-append xs ys)
+  (if (null? xs)
+      ys
+      (cons (car xs) (myappend (cdr xs) ys))))
+
+; applying function 'f' to each element of list
+; then make list of the result
+(define (my-map f xs)
+  (if (null? xs)
+      null
+      (cons (f (car xs)) (my_map f (cdr xs)))))
+
